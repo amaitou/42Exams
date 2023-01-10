@@ -27,13 +27,21 @@ int base(char c, int base)
 int	ft_atoi_base(const char *str, int str_base)
 {
 	char *p = (char *)str;
-	int nb = 0;
-	int i = 0;
-	while (base(p[i], str_base) != -1)
+	int r = 0;
+	int s = 1;
+	while (*p == ' ' || *p == '\n' || *p == '\t' || *p == '\f' || *p == '\v' || *p == '\r')
+		++p;
+	if (*p == '-' || *p == '+')
 	{
-		nb = nb * str_base;
-		nb = nb + base(p[i], str_base);
-		i++;
+		if (*p == '-')
+			s *= -1;
+		++p;
 	}
-	return nb;
+	while (base(*p, str_base) != -1)
+	{
+		r = r * str_base;
+		r = r + base(*p, str_base);
+		p++;
+	}
+	return r * s;
 }
