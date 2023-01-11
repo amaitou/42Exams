@@ -1,15 +1,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-
-void ft_putstr(char *s)
-{
-	while (*s)
-	{
-		write(1, s, 1);
-		++s;
-	}
-}
+#include <stdio.h>
 
 int ft_spaces(char c)
 {
@@ -77,20 +69,29 @@ char    **ft_split(char *str)
 	return (p);
 }
 
+void ft_putstr(char *s)
+{
+	while (*s)
+	{
+		write(1, s, 1);
+		++s;
+	}
+}
+
 int main(int ac, char **ag)
 {
-	if (ac > 1)
+	if (ac == 2)
 	{
+		int s = word_len(ag[1]) - 1;
 		char **p = ft_split(ag[1]);
-		int size = word_len(ag[1]) - 1;
-		int i = 1;
-		while (i < size + 1)
+		while (s >= 0)
 		{
-			ft_putstr(p[i]);
-			write(1, " ", 1);
-			++i;
+			ft_putstr(p[s]);
+			if (!(s - 1 < 0))
+				write(1, " ", 1);
+			--s;
 		}
-		ft_putstr(p[0]);
 	}
 	write(1, "\n", 1);
+	return (0);
 }

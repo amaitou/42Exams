@@ -60,6 +60,7 @@ char    **ft_split(char *str)
 				++k;
 				++i;
 			}
+			p[j][k] = '\0';
 			++j;
 		}
 	}
