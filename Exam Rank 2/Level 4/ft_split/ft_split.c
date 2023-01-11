@@ -66,17 +66,3 @@ char    **ft_split(char *str)
 	p[j] = NULL;
 	return (p);
 }
-
-int main(void)
-{
-	char s[100] = "lelouche is the best developer in the world in the historic";
-	char **p = ft_split(s);
-	int si = word_len(s) + 1;
-	int i = 0;
-	while (i < si)
-	{
-		printf("%s\n", p[i]);
-		++i;
-	}
-	return (0);
-}
