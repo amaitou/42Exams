@@ -171,11 +171,3 @@ int ft_printf(char *s, ...)
 	va_end(arg);
 	return (i);
 }
-
-int main(void)
-{
-	int x = 256;
-	ft_printf("%p\n", &x);
-	printf("%p\n", &x);
-	return (0);
-}

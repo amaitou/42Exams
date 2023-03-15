@@ -145,15 +145,3 @@ char *get_next_line(int fd)
 	stash = del(stash);
 	return (l);
 }
-
-int main(void)
-{
-	int fd = open("file.txt", O_RDONLY);
-	if (fd < 0)
-		printf("failed to open the path file\n");
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-}
