@@ -28,8 +28,8 @@ int change_directory(char **ag, int i)
 	if (chdir(ag[1]) == -1)
 	{
 		put_error("error: cd: cannot change directory to ");
-        put_error(ag[1]);
-        put_error("\n");
+        	put_error(ag[1]);
+        	put_error("\n");
 		return (1);
 	}
 	return (0);
@@ -64,8 +64,8 @@ int execute_command(char **ag, int flag, int *fd, char **envp, int i)
 		if (execve(ag[0], ag, envp) == -1)
 		{
 			put_error("error: cannot execute ");
-            put_error(ag[0]);
-            put_error("\n");
+            		put_error(ag[0]);
+            		put_error("\n");
 			return (1);
 		}
 	}
