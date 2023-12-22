@@ -6,13 +6,14 @@
 #include "ASpell.hpp"
 #include "ATarget.hpp"
 #include <vector>
+#include "SpellBook.hpp"
 
 class Warlock
 {
 	private:
 		std::string name;
 		std::string title;
-		std::vector<ASpell*> list;
+		SpellBook b;
 
 		Warlock();
 		Warlock(const Warlock &copy);

@@ -44,41 +44,21 @@ void Warlock::introduce(void) const
 
 void Warlock::learnSpell(ASpell *object)
 {
-	std::vector<ASpell *>::iterator t = this->list.begin();
-	while (t != this->list.end())
-	{
-		if ((*t)->getName() == (*object).getName())
-			return ;
-		++t;
-	}
-	this->list.push_back(object->clone());
+	this->b.learnSpell(object);
 }
 
 void Warlock::forgetSpell(std::string name)
 {
-	std::vector<ASpell *>::iterator t = this->list.begin();
-	while (t != this->list.end())
-	{
-		if ((*t)->getName() == name)
-		{
-			delete (*t);
-			this->list.erase(t);
-		}
-		else
-			++t;
-	}
+	this->b.forgetSpell(name);
 }
 
 void Warlock::launchSpell(std::string name, ATarget const &object)
 {
-	std::vector<ASpell *>::iterator t = this->list.begin();
-	while (t != this->list.end())
-	{
-		if ((*t)->getName() == name)
-		{
-			(*t)->launch(object);
-			return;
-		}
-		++t;
-	}
+	ASpell *_object;
+
+	_object = this->b.createSpell(name);
+	if (_object == NULL)
+		return ;
+	_object->launch(object);
+	delete _object;
 }
