@@ -1,7 +1,20 @@
 
 #include "SpellBook.hpp"
 
-SpellBook::~SpellBook() {}
+SpellBook::~SpellBook()
+{
+	std::vector<ASpell *>::iterator t;
+
+	t = this->b.begin();
+	while (t != this->b.end())
+	{
+		delete *t;
+		this->b.erase(t);
+		++t;
+	}
+}
+
+SpellBook::SpellBook() {}
 
 void SpellBook::learnSpell(ASpell *object)
 {

@@ -7,17 +7,17 @@
 class SpellBook
 {
 	private:
-		SpellBook();
 		SpellBook(SpellBook const &copy);
 		SpellBook & operator = (SpellBook const &object);
 		std::vector<ASpell *> b;
 	
 	public:
+		SpellBook();
 		~SpellBook();
 
 		void learnSpell(ASpell *object);
 		void forgetSpell(std::string const &spell);
 		ASpell *createSpell(std::string const &name);
-}
+};
 
 #endif

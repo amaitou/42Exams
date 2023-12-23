@@ -11,13 +11,6 @@ Warlock::Warlock(std::string const &name, std::string const &title)
 Warlock::~Warlock()
 {
 	std::cout << this->getName() << ": My job here is done!\n";
-	std::vector<ASpell *>::iterator t = this->list.begin();
-	while (t != this->list.end())
-	{
-		delete (*t);
-		this->list.erase(t);
-		++t;
-	}
 }
 
 const std::string &Warlock::getName() const
