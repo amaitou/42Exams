@@ -52,7 +52,7 @@ It will have the following functions:
   specified type
 
 Phew, that's done. Now here's a test main. It's not very thorough, so make sure 
-to use your own aswell.
+to use your own as well.
 
 int main()
 {
