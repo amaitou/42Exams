@@ -1,7 +1,8 @@
-#ifndef FIREBALL_HPP
-#define FIREBALL_HPP
 
-#include "ASpell.hpp"
+#include <iostream>
+#include <string>
+
+#include "Fwoosh.hpp"
 
 class Fireball: public ASpell
 {
@@ -9,7 +10,5 @@ class Fireball: public ASpell
 		Fireball();
 		~Fireball();
 
-		virtual ASpell *clone(void) const;
+		ASpell *clone(void) const;
 };
-
-#endif

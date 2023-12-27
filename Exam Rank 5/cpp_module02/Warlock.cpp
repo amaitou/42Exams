@@ -47,11 +47,11 @@ void Warlock::forgetSpell(std::string name)
 
 void Warlock::launchSpell(std::string name, ATarget const &object)
 {
-	ASpell *_object;
+	ASpell *obj;
 
-	_object = this->b.createSpell(name);
-	if (_object == NULL)
+	obj = this->b.createSpell(name);
+	if (!obj)
 		return ;
-	_object->launch(object);
-	delete _object;
+	obj->launch(object);
+	delete obj;
 }

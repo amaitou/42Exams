@@ -1,12 +1,7 @@
+
 #include "TargetGenerator.hpp"
 
-TargetGenerator::~TargetGenerator()
-{
-	for (size_t i = 0; i < v.size(); i++) {
-		delete v[i];
-		v.erase(v.begin() + i);
-	}
-}
+TargetGenerator::~TargetGenerator() {}
 
 TargetGenerator::TargetGenerator() {}
 
@@ -22,17 +17,16 @@ void TargetGenerator::learnTargetType(ATarget *object)
 		++t;
 	}
 	this->v.push_back(object->clone());
-	return ;
 }
 
-void TargetGenerator::forgetTargetType(std::string const &type)
+void TargetGenerator::forgetTargetType(std::string const &name)
 {
 	std::vector<ATarget *>::iterator t;
 
 	t = this->v.begin();
 	while (t != this->v.end())
 	{
-		if ((*t)->getType() == type)
+		if ((*t)->getType() == name)
 		{
 			delete *t;
 			this->v.erase(t);
@@ -40,19 +34,19 @@ void TargetGenerator::forgetTargetType(std::string const &type)
 		}
 		++t;
 	}
-	return ;
 }
 
-ATarget *TargetGenerator::createTarget(std::string const &type)
+ATarget *TargetGenerator::createTarget(std::string const &name)
 {
 	std::vector<ATarget *>::iterator t;
 
 	t = this->v.begin();
 	while (t != this->v.end())
 	{
-		if ((*t)->getType() == type)
+		if ((*t)->getType() == name)
 			return ((*t)->clone());
 		++t;
 	}
-	return (NULL) ;
+	return (NULL);
+
 }

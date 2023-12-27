@@ -1,24 +1,24 @@
+
 #ifndef TARGETGENERATOR_HPP
 #define TARGETGENERATOR_HPP
 
+#include <vector>
 #include "ATarget.hpp"
-# include <vector>
 
 class TargetGenerator
 {
-	public:
+	private:
 		TargetGenerator(TargetGenerator const &copy);
 		TargetGenerator & operator = (TargetGenerator const &object);
+
 		std::vector<ATarget *> v;
-	
+
 	public:
 		TargetGenerator();
-		virtual ~TargetGenerator();
-
+		~TargetGenerator();
 		void learnTargetType(ATarget *object);
-		void forgetTargetType(std::string const &type);
-		ATarget *createTarget(std::string const &type);
-
+		void forgetTargetType(std::string const &name);
+		ATarget *createTarget(std::string const &name);
 };
 
 #endif

@@ -1,3 +1,4 @@
+
 #ifndef BRICKWALL_HPP
 #define BRICKWALL_HPP
 
@@ -9,7 +10,7 @@ class BrickWall: public ATarget
 		BrickWall();
 		~BrickWall();
 
-		virtual ATarget *clone(void) const;
+		ATarget *clone(void) const;
 };
 
-#endif 
+#endif

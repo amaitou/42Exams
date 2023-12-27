@@ -1,3 +1,4 @@
+
 #ifndef POLYMORPH_HPP
 #define POLYMORPH_HPP
 
@@ -9,7 +10,7 @@ class Polymorph: public ASpell
 		Polymorph();
 		~Polymorph();
 
-		virtual ASpell *clone(void) const;
+		ASpell *clone(void) const;
 };
 
 #endif
